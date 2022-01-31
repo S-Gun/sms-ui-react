@@ -1,6 +1,9 @@
 to initialize a new repo
+
 git init
+
 git branch -M main
+
 git remote add origin origin-link
 
 
