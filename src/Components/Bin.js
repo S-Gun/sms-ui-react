@@ -1,12 +1,29 @@
 import React from 'react';
-import { Button, Badge } from "react-bootstrap";
+import { Button } from 'bootstrap';
 import './Bin.css';
+// import { Snackbar } from '@material-ui/core';
+// import { IconButton, FontAwesomeIcon, icon} from '@material-ui/core';
+// import { SvgIcon, open, handleClick, action } from '@material-ui/core';
 
-export default function Bin(){
+// function handleClick{
+//   return(
+//        <NO Deleted messages/>
+//   )
+// }
+export default function Bin() {
     return(
-    // <Button className = 'trash' variant="primary">
-    
-    // </Button>
-     <>Hi</>)
+    // <>Hi</>
+       <>
+       {/* <Button onClick={handleClick}>Deleted messages</Button> */}
+       </>
+        
+    /* //     <Snackbar>
+    //       open={open}
+    //        autoHideDuration={6000}
+    //         onClose={handleClose}
+    //         message="No deleted messages found"
+    //     action={action}
+    //     </Snackbar> */
+  )
 
 }

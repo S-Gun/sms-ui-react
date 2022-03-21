@@ -19,7 +19,7 @@ return(
     
     <ReactCircleModal
          
-      backgroundColor="lightGrey" //backgroundImage = ".png"
+      backgroundColor="black" //backgroundImage = ".png"
       toogleComponent={onClick => (
         // <Icon fontSize="large">+</Icon>
         <Grid xs={1} align="right">
@@ -34,7 +34,7 @@ return(
       offsetY={0}
     >
       {(onClick) => (
-        <div style={{ backgroundColor: 'grey', padding: '1em' }}>
+        <div style={{ backgroundColor: 'white', padding: '1em' }}>
             <button className='closebtn' onClick={onClick}>
             X
           </button>
@@ -48,9 +48,7 @@ return(
                 placeholder="xyz20@iitk.ac.in"
                 aria-describedby="basic-addon2"
                 />
-                <Button variant="primary" id="button-addon2">
-                +
-                </Button>
+                <Button variant="primary" id="button-addon2">+</Button>
                 </InputGroup>
             </Form.Group>
 
@@ -59,12 +57,17 @@ return(
                 <Form.Control type="text" as = "textarea" placeholder="Type your message here" />
             </Form.Group>
            
-            <Button variant="primary" type="save" >
-                Save as Draft
-            </Button>{'  '}
-            <Button variant="primary" type="send"  >
-                Send
-            </Button>
+              <Button variant="primary" type="save" >
+                  Save as Draft
+              </Button>{'  '}
+
+              <Button variant="primary" type="attachment"  >
+                  Attachment
+              </Button>{'  '}
+            
+              <Button variant="primary" type="send"  >
+                 Send
+              </Button>
             </Form>
             
         </div>
@@ -73,3 +76,11 @@ return(
 </div>
 )
 };
+{/* <form onsubmit="console.log('You clicked submit.'); return false">
+  <button type="submit">Submit</button>
+</form> */}
+
+
+
+
+

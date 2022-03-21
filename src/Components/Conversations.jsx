@@ -13,6 +13,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import Fab from '@material-ui/core/Fab';
 import StartConversation from './StartConversation';
+// import { Badge, StyledBadge } from '@material-ui/core';
+// import { DataGridPro } from '@mui/x-data-grid-pro';
 // import SendIcon from '@material-ui/icons/Send';
 
 const useStyles = makeStyles({
@@ -35,17 +37,17 @@ const useStyles = makeStyles({
   }
 });
 
-// function chatId(){
-//     var msg = document.getElementById("kuchAur");
-//     var chatBox = document.getElementById("message");
-//     var today = new Date();
-//     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-//     console.log(chatBox.innerHTML);
-//     // chatBox.innerHTML= "";
-//     // chatBox.innerHTML += '<ListItem key="5"><Grid container><Grid item xs={12}><ListItemText align="left" primary="'+ msg.value +'"></ListItemText></Grid><Grid item xs={12}><ListItemText align="left" secondary=""></ListItemText></Grid></Grid></ListItem>';
-//     chatBox.innerHTML += '<li class="MuiListItem-root MuiListItem-gutters"><div class="MuiGrid-root MuiGrid-container"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"><div class="MuiListItemText-root" align="right"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock">'+ msg.value +'</span></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"><div class="MuiListItemText-root" align="right" secondary=""><p class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock">'+ time +'</p></div></div></div></li>';
-//     msg.value = "";
-// }
+function chatId(){
+    var msg = document.getElementById("kuchAur");
+    var chatBox = document.getElementById("message");
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    console.log(chatBox.innerHTML);
+    // chatBox.innerHTML= "";
+    chatBox.innerHTML += '<ListItem key="5"><Grid container><Grid item xs={12}><ListItemText align="left" primary="'+ msg.value +'"></ListItemText></Grid><Grid item xs={12}><ListItemText align="left" secondary=""></ListItemText></Grid></Grid></ListItem>';
+    chatBox.innerHTML += '<li class="MuiListItem-root MuiListItem-gutters"><div class="MuiGrid-root MuiGrid-container"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"><div class="MuiListItemText-root" align="right"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock">'+ msg.value +'</span></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"><div class="MuiListItemText-root" align="right" secondary=""><p class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock">'+ time +'</p></div></div></div></li>';
+    msg.value = "";
+}
 
 const Conversations = () => {
   const classes = useStyles();
@@ -61,40 +63,45 @@ const Conversations = () => {
         <Grid container component={Paper} className={classes.chatSection}>
             <Grid item xs={3} className={classes.borderRight500}>
             
-                <List>
+                {/* <List>
                     <ListItem button key="You" > <StartConversation />
                         <ListItemIcon>
                         <Avatar alt="You" src="https://material-ui.com/static/images/avatar/1.jpg" />
                         </ListItemIcon>
                         <ListItemText primary="You"></ListItemText>
                     </ListItem>
-                </List>
-                <Divider />
+                </List> */}
+                {/* <Divider />
                 <Grid item xs={12} style={{padding: '10px'}}>
-                    <TextField id="outlined-basic-email" label="Search" variant="outlined" fullWidth />
+                    <TextField id="outlined-basic-search" label="Search" variant="outlined" fullWidth/>
                 </Grid>
-                <Divider />
+                <Divider /> */}
                 <List>
-                    <ListItem button key="Person1">
+                    <ListItem button key="Person 1">
                         <ListItemIcon>
                             <Avatar alt="Person1" src="https://material-ui.com/static/images/avatar/1.jpg" />
                         </ListItemIcon>
                         <ListItemText primary="Person 1"></ListItemText>
-                        {/* <ListItemText secondary="online" align="right"></ListItemText> */}
+                        <ListItemText secondary="online" align="right"></ListItemText>
                     </ListItem>
+                    <Divider />
                     <ListItem button key="Person2">
                         <ListItemIcon>
+                            {/* <StyledBadge overlap="circular" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}variant="dot"> */}
                             <Avatar alt="Person 2" src="https://material-ui.com/static/images/avatar/3.jpg" />
                         </ListItemIcon>
                         <ListItemText primary="Person 2"></ListItemText>
                     </ListItem>
+                    <Divider />
                     <ListItem button key="Person 3">
                         <ListItemIcon>
                             <Avatar alt="Person3" src="https://material-ui.com/static/images/avatar/2.jpg" />
                         </ListItemIcon>
                         <ListItemText primary="Person 3"></ListItemText>
                     </ListItem>
+                    <Divider />
                 </List>
+                <StartConversation />
             </Grid>
             <Grid item xs={9}>
                 <List className={classes.messageArea}>
@@ -104,7 +111,7 @@ const Conversations = () => {
                                 <ListItemText align="right" primary="Hello, What's up?"></ListItemText>
                             </Grid>
                             <Grid item xs={12}>
-                                <ListItemText align="right" secondary="09:30"></ListItemText>
+                                <ListItemText align="right" secondary="10:30"></ListItemText>
                             </Grid>
                         </Grid>
                     </ListItem>
@@ -114,17 +121,17 @@ const Conversations = () => {
                                 <ListItemText align="left" primary="Hey, I am Good! What about you?"></ListItemText>
                             </Grid>
                             <Grid item xs={12}>
-                                <ListItemText align="left" secondary="09:31"></ListItemText>
+                                <ListItemText align="left" secondary="10:42"></ListItemText>
                             </Grid>
                         </Grid>
                     </ListItem>
                     <ListItem key="3">
                         <Grid container>
                             <Grid item xs={12}>
-                                <ListItemText align="right" primary="Cool. I am good too, let's meet and discuss the topic soon!"></ListItemText>
+                                <ListItemText align="right" primary="Nice. I am good too, let's meet and discuss the topic soon!"></ListItemText>
                             </Grid>
                             <Grid item xs={12}>
-                                <ListItemText align="right" secondary="10:30"></ListItemText>
+                                <ListItemText align="right" secondary="10:50"></ListItemText>
                             </Grid>
                         </Grid>
                     </ListItem>
@@ -134,7 +141,7 @@ const Conversations = () => {
                                 <ListItemText align="left" primary="yes sure, we'll discuss tomorrow morning."></ListItemText>
                             </Grid>
                             <Grid item xs={12}>
-                                <ListItemText align="left" secondary="10:30"></ListItemText>
+                                <ListItemText align="left" secondary="11:02"></ListItemText>
                             </Grid>
                         </Grid>
                     </ListItem>
@@ -147,8 +154,7 @@ const Conversations = () => {
                         <TextField id="kuchAur" label="Type Something" fullWidth />
                     </Grid>
                     <Grid xs={1} align="right">
-                        {/* <Fab color="primary" aria-label="add" onClick ={chatId} >Send</Fab> */}
-                        <Fab color="primary" aria-label="add" >Send</Fab>
+                        <Fab color="primary" aria-label="add" onClick ={chatId} >Send</Fab>
                     </Grid>
                 </Grid>
             </Grid>

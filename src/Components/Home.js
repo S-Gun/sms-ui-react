@@ -1,69 +1,64 @@
-// import React from 'react';
-// import { Sonnet } from "react-bootstrap";
-// import { Tab } from 'bootstrap';
+import React, { useState } from 'react';
+import { Nav, Navbar, NavDropdown, Container, Form, FormControl, Button, Badge } from 'react-bootstrap';
+import { SvgIcon } from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
+import FloatingPopup from './FloatingPopup.js'
 
-// export default function Home () {
-//     return (
-//         <div>
-//         <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
-//         <Tab eventKey="home" title="Home">
-//             <Sonnet />
-//         </Tab>
-//         <Tab eventKey="profile" title="Profile">
-//             <Sonnet />
-//         </Tab>
-//         <Tab eventKey="contact" title="Contact" disabled>
-//             <Sonnet />
-//         </Tab>
-//         </Tabs>
-//       </div>
-//     )
+function ProfileVisit() {
+    // e.preventDefault();
+    console.log('profile under development');
+  
+  }
+
+function HomeIcon(props) {
+    return (
+            <SvgIcon {...props}>
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </SvgIcon>
+    );
+}
+
+export default function Home () {
+    return (
+        <>
+        <Navbar bg="dark" variant="dark">
+            <Container fluid>
+                <Navbar.Brand href="#"><HomeIcon />Message</Navbar.Brand>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+             <Nav className="me-auto my-2 my-lg-0"style={{ maxHeight: '100px' }}navbarScroll>
+                <Nav.Link href="#home" onClick={FloatingPopup}>Home</Nav.Link>
+                <Nav.Link href="#bin"onClick={FloatingPopup}>Bin</Nav.Link>
+                <Nav.Link href="#draft"onClick={FloatingPopup}>Draft</Nav.Link>
+                <Nav.Link href="#sent"onClick={FloatingPopup}>Sent{' '}<Badge bg="secondary">10</Badge></Nav.Link>
+                    <NavDropdown title="Settings" id="navbarScrollingDropdown">
+                    <NavDropdown.Item href="#newgroup">New Group</NavDropdown.Item>
+                    <NavDropdown.Item href="#newlist">New Broadcast</NavDropdown.Item>
+                    <NavDropdown.Item href="#outbox">Outbox</NavDropdown.Item>
+                    <NavDropdown.Item href="#">Mute Messages</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action9"> Something else here
+                    </NavDropdown.Item> </NavDropdown>
+            </Nav>
+         </Navbar.Collapse>
+         <Navbar.Collapse className="justify-content-end">
+             <Navbar.Text>
+               Signed in as:
+               <Avatar align='center' src="/broken-image.jpg" /><button href="#profile" onClick= {ProfileVisit}> Shagun Jain</button>
+             </Navbar.Text>
+        </Navbar.Collapse>
+        </Container>
+     </Navbar>
+        <Form className="d-flex" bg="dark" variant="dark">
+              <FormControl
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+                />
+               <Button variant="outline-success">Search</Button>
+            </Form>
+        </>
+    )
     
-// }
-
-{/* <Newmsg />
-    {/* <button className="open-button" onClick={this.openForm()} >New Message</button> */}
-    {/* <div className="container-fluid row chat-popup" id="myForm" display="none">
-    <Popup trigger={<button> Trigger</button>} position="right center">
-    <div>Popup content here !!</div> */}
-    {/* </Popup> */}
-            {/* <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                <Form.Label>To</Form.Label>
-                <Form.Control type="text" placeholder="name@example.com" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Message</Form.Label>
-                <Form.Control as="textarea" rows={3} />
-            </Form.Group>
-            <Form.Group classNmae="mb-3">
-                <Button type="submit">Send</Button>
-            </Form.Group>
-            </Form> */}
-        {/* </div> */} 
-
-        {/* <Popup trigger={<button> New SMS </button>}
-	position="left center">
-	<Form>
-    <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-    </Form.Group>
-
-    <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Message</Form.Label>
-        <Form.Control type="text" placeholder="message" />
-    </Form.Group>
-    <Button variant="primary" type="submit">
-        Submit
-    </Button>
-    </Form>
-	</Popup> */}
-
-// function openForm() {
-//   document.getElementById("myForm").style.display = "block";
-// }
-
-// function closeForm() {
-//   document.getElementById("myForm").style.display = "none";
-// }
+}
