@@ -7,7 +7,7 @@ import { Button } from "bootstrap";
 import './Profile.css';
 
 
-function OffCanvasProfile({ name, ...props }) {
+export default function OffCanvasProfile({ name, ...props }) {
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
@@ -29,15 +29,15 @@ function OffCanvasProfile({ name, ...props }) {
       </>
     );
   }
-  function Profile() {
-    return (
-      <>
-        {['end'].map((placement, idx) => (
-          <OffCanvasProfile key={idx} placement={placement} name={placement} />
-        ))}
-      </>
-    );
-  }
+  // function Profile() {
+  //   return (
+  //     <>
+  //       {['end'].map((placement, idx) => (
+  //         <OffCanvasProfile key={idx} placement={placement} name={placement} />
+  //       ))}
+  //     </>
+  //   );
+  // }
   
 //   render(<Profile />);
 // function ProfileVisit(e) {

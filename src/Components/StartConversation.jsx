@@ -15,7 +15,7 @@ import Grid from '@material-ui/core/Grid';
 
 export default function StartConversation(){
 return(
-<div className="popup">
+<div className="popup" style={{backgroundImage: "assets/bgimg.jpg"}}>
     
     <ReactCircleModal
          

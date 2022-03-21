@@ -48,6 +48,12 @@ function chatId(){
     chatBox.innerHTML += '<li class="MuiListItem-root MuiListItem-gutters"><div class="MuiGrid-root MuiGrid-container"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"><div class="MuiListItemText-root" align="right"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock">'+ msg.value +'</span></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"><div class="MuiListItemText-root" align="right" secondary=""><p class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock">'+ time +'</p></div></div></div></li>';
     msg.value = "";
 }
+const handleKeypress = e => {
+    //it triggers by pressing the enter key
+  if (e.keyCode === 13) {
+    chatId();
+  }
+};
 
 const Conversations = () => {
   const classes = useStyles();
@@ -154,7 +160,7 @@ const Conversations = () => {
                         <TextField id="kuchAur" label="Type Something" fullWidth />
                     </Grid>
                     <Grid xs={1} align="right">
-                        <Fab color="primary" aria-label="add" onClick ={chatId} >Send</Fab>
+                        <Fab color="primary" aria-label="add" onClick ={chatId} onKeyPress={handleKeypress} >Send</Fab>
                     </Grid>
                 </Grid>
             </Grid>
